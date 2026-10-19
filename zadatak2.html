@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zadatak 2: Anketa nakon date-a</title>
+</head>
+<body>
+
+<div style="text-align: center;"><h1>Anketa nakon date-a</h1><br>
+<p>Ostanite vaše dojmove ispod:</p></div>
+
+<form style="border: 1px solid black; border-radius: 5px; padding: 15px;">
+<form style="border: 1px solid black; border-radius: 5px; padding: 15px; width: 25%;" >
+<label for="korisnik">Ime i prezime:</label>
+<input type="text" id="korisnik" name="korisnik">
+
+<p style="margin: 0 0 5px 0;">Kako ti se svidio moj izgled / stajling?</p>
+<input type="radio" id="izgled_super" name="ocjena_izgleda" value="odlicno">
+<label for="izgled_super">Odličan / Bas po mom ukusu</label><br>
+
+<input type="radio" id="izgled_ok" name="ocjena_izgleda" value="ok">
+<label for="izgled_ok">Projekat u izradi (pristojno)</label><br>
+
+<input type="radio" id="izgled_lose" name="ocjena_izgleda" value="lose">
+<label for="lose">Trebamo poraditi na garderobi</label><br><br>
+
+<p style="margin: 0 0 5px 0;">Koje teme za razgovor su ti bile najzanimljivije? (moguće više izbora):</p>
+
+<input type="checkbox" id="tema_filmovi" name="teme" value="filmovi">
+<label for="tema_filmovi">Filmovi i muzika</label><br>
+
+<input type="checkbox" id="tema_putovanja" name="teme" value="putovanja">
+<label for="tema_putovanja">Putovanja i avanture</label><br>
+
+<input type="checkbox" id="tema_posao" name="teme" value="posao_ambicije">
+<label for="tema_posao">Posao i ambicije</label><br>
+
+<input type="checkbox" id="tema_smijesne_price" name="teme" value="smijesne_price">
+<label for="tema_smijesne_price">Smiješne anegdote i životne priče</label><br><br>
+
+<label for="unapredjenje">Šta bih najviše trebao popraviti za sljedeći put?</label><br>
+<select id="unapredjenje" name="unapredjenje">
+    <option value="slusanje">Manje pričati, više slušati</option>
+    <option value="izbor_mjesta">Bolji izbor mjesta / aktivnosti</option>
+    <option value="kasnjenje">Doći tačno na vrijeme</option>
+    <option value="sve_top">Ništa, sve je bilo super!</option>
+    <option value="neama_sljedeceg_puta" style="background-color: red; color:white;">Nema sljedećeg puta. Sportski pozdrav!</option>
+</select><br><br>
+
+<button type="submit">Pošalji anketu</button>
+</form>
+
+</body>
+</html>
