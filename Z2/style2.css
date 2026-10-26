@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    height: 100%;
+}
+
+#zaglavlje {
+    display: flex;
+    width: 100%;
+}
+
+#slika {
+    background-color: #121212;
+    width: 150px;
+    height: 100px;
+}
+
+#logo {
+    width: 100%;
+    height: 100%;
+}
+
+#meni {
+    background-color: #212121;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+#meni ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    gap: 25px;
+}
+
+#meni a {
+    color: white;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    width: 200px;
+  
+    display: inline;
+    /* Ukoliko koristimo inline način display-a, formatiranje margina, visine itd. se neće
+    primjeniti , već je moguće samo kliknuti na a element, ukoliko primjenimo blok nacin display-a, onda 
+    je moguce primjeniti formatiranja margina, paddinga, visine itd. , te je moguće kliknuti na cijeli blok koji se formira u okolini
+    elementa liste.*/
+}
+
+#meni a:hover {
+    color: burlywood;
+}
+
+#glavno{
+    padding: 0 25px 232px 25px;
+}
+#podnozje{
+    text-align: center;
+    width: 100%;
+    height: 20px;
+    background-color: #212121;
+    color: aliceblue;
+    padding: 0;
+    margin: 0;
+}
