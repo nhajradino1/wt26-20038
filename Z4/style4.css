@@ -1,0 +1,96 @@
+
+
+body {
+    margin: 8px;
+    background-color: white;
+    color: black;
+    font-family: "Times New Roman", serif;
+    font-size: 16px;
+}
+
+#okvir {
+    width: 520px;
+}
+
+h1 {
+    margin: 0 0 27px 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+.napredak {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 22px;
+}
+
+progress {
+    width: 198px;
+    height: 20px;
+    appearance: none;
+ 
+    border: 1px solid #b5b5b5;
+    background-color: white;
+}
+
+progress::-webkit-progress-bar {
+    background-color: white;
+}
+
+progress::-webkit-progress-value {
+    background-color: #829baa;
+}
+
+progress::-moz-progress-bar {
+    background-color: #829baa;
+}
+
+.napredak span {
+    font-size: 18px;
+}
+
+.red-forme {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+label {
+    display: inline-block;
+    width: 128px;
+    font-size: 18px;
+}
+
+input {
+    box-sizing: border-box;
+    height: 26px;
+    border: 2px solid #d0d0d0;
+    background-color: white;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+input[type="date"] {
+    width: 188px;
+}
+
+input[type="email"] {
+    width: 211px;
+}
+
+
+.dugmad {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
+    margin-left: 2px;
+}
+
+button {
+    padding: 3px 9px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: black;
+}
