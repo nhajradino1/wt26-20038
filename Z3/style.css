@@ -1,0 +1,29 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    color: #333;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #333;
+    padding: 10px 14px;
+    text-align: center;
+    min-width: 30px;
+}
+
+th {
+    background-color: #CCCCCC;
+    font-weight: bold;
+}
+
+.red-paran td {
+    background-color: #FFF2CC;
+}
+
+.red-neparan td {
+    background-color: #FFFFFF;
+}
