@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <title>Z2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Kreiranje obavijesti</h1>
+    
+    <div id="greska" style="display: none;"></div>
+
+    <form>
+        <div>
+            <label for="naslovInput">Naslov:</label>
+            <input type="text" id="naslovInput">
+        </div>
+        
+        <div>
+            <label for="tekstInput">Tekst:</label>
+            <textarea id="tekstInput"></textarea>
+        </div>
+        
+        <div>
+            <label>Kategorija:</label>
+            <input type="radio" id="katVazno" name="kategorija" value="vazno">
+            <label for="katVazno">Važno</label>
+            
+            <input type="radio" id="katZabava" name="kategorija" value="zabava">
+            <label for="katZabava">Zabava</label>
+        </div>
+        
+        <div>
+            <input type="button" id="pregledBtn" value="Pregledaj obavijest">
+            <input type="button" id="resetBtn" value="Resetuj formu">
+        </div>
+    </form>
+
+    <hr>
+
+    <div id="pregledKontejner">
+        <h2>Pregled obavijesti</h2>
+        <div id="prikazNaslov"></div>
+        <div id="prikazKategorija"></div>
+        <div id="prikazTekst"></div>
+    </div>
+</body>
+</html>

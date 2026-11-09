@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <title>Z3</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Evidencija troškova</h1>
+
+    <div id="greska" style="display: none;"></div>
+
+    <form>
+        <div>
+            <label for="nazivInput">Naziv:</label>
+            <input type="text" id="nazivInput">
+        </div>
+        
+        <div>
+            <label for="iznosInput">Iznos:</label>
+            <input type="text" id="iznosInput">
+        </div>
+        
+        <div>
+            <input type="button" id="dodajBtn" value="Dodaj stavku">
+        </div>
+    </form>
+
+    <hr>
+
+    <table id="troskoviTabela">
+        <thead>
+            <tr>
+                <th>Naziv</th>
+                <th>Iznos (KM)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Hrana</td>
+                <td>25.50</td>
+            </tr>
+            <tr>
+                <td>Prevoz</td>
+                <td>10.00</td>
+            </tr>
+            <tr>
+                <td>Kafa</td>
+                <td>4.50</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Ukupno:</td>
+                <td id="zbirCelija">40.00</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

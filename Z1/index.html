@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z1</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Spisak stvari koje treba ponijeti na put:</h1>
+    <progress id="progressBar" max="5" value="0"></progress>
+    <p id="progressText">Završeno 0 od 5 stavki</p>
+    
+    <form method="post">
+        <label for="pasos">Pasoš</label>
+        <input type="button" id="pasos" name="pasos" value="Check">
+        
+        <label for="novcanik">Novčanik</label>
+        <input type="button" id="novcanik" name="novcanik" value="Check">
+        
+        <label for="odjeca">Odjeća</label>
+        <input type="button" id="odjeca" name="odjeca" value="Check">
+        
+        <label for="higijena">Higijena</label>
+        <input type="button" id="higijena" name="higijena" value="Check">
+        
+        <label for="punjac">Punjač</label>
+        <input type="button" id="punjac" name="punjac" value="Check">
+    </form>
+    
+    <br>
+    <input type="button" id="resetBtn" value="Resetuj sve">
+</body>
+</html>
