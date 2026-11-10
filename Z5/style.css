@@ -1,0 +1,10 @@
+
+input{
+    display: block;
+    margin-bottom: 10px;
+}
+
+input:invalid {
+    background-color: #ffeeee;
+    border: 1px solid red;
+}

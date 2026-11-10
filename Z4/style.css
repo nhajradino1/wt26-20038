@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.grana {
+    margin-bottom: 10px;
+}
+
+.cvor {
+    cursor: pointer;
+    font-weight: bold;
+    user-select: none;
+}
+
+.znak {
+    display: inline-block;
+    width: 15px;
+    text-align: center;
+}
+
+.podstablo {
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.stavka {
+    margin-bottom: 3px;
+}
