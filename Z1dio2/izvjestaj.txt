@@ -1,0 +1,41 @@
+Laboratorijska vježba br. 5: HTTP protokol i Postman alat
+Izvještaj – Zadatak 1
+
+Prilikom otvaranja web stranice https://etf.unsa.ba/ u web pretraživaču, putem alata Developer Tools (kartica Network) snimljeni su HTTP zahtjevi i odgovori između klijenta i servera. U nastavku su dati odgovori na postavljena pitanja.
+
+Pitanje 1: Kojom HTTP metodom se šalje zahtjev?
+Zahtjev za pristup početnoj stranici (https://etf.unsa.ba/), kao i zahtjevi za sve prateće resurse (CSS datoteke, JavaScript skripte, JSON podaci, slike i fontovi), šalju se HTTP metodom GET. Klijent putem ove metode od servera potražuje postojeće resurse potrebne za prikaz web stranice.
+
+Pitanje 2: Koliko je vremena trebalo da dođe prvi, a koliko za posljednji odgovor od servera?
+- Prvi odgovor: Za glavni HTML dokument (etf.unsa.ba) vrijeme od slanja zahtjeva do prijema odgovora od servera iznosilo je 1.46 s (dok su pojedini lokalno keširani resursi učitani za 19 ms).
+- Posljednji odgovor: Najduže je trajalo preuzimanje slike visoke rezolucije (alexandre_debieve_FO_7_J_llwj_Ot_U_unsplash_oier6r_8839b935c6.jpg), za čiji je potpuni prijem odgovora bilo potrebno 8.73 s.
+
+Pitanje 3: Zahtjev i odgovor za dobavljanje resursa (veličina tijela i zaglavlja)
+Analizom zahtjeva za dobavljanje slike (c25a3f4e5c2e904125f32a691b061303.png) utvrđeno je da veličina prenesenog tijela odgovora iznosi 456 kB, dok za glavni HTML dokument (etf.unsa.ba) veličina tijela odgovora iznosi 308776 bajtova (odnosno 309 kB).
+
+Zaglavlja zahtjeva (Request Headers) i njihovo značenje:
+- :authority (ili Host): etf.unsa.ba – označava naziv domene servera kojem se šalje zahtjev.
+- :method: GET – definira HTTP metodu kojom se traži resurs.
+- :path: / – označava putanju do traženog resursa na serveru (korijenska stranica, odnosno putanja do konkretne slike kod zahtjeva za sliku).
+- :scheme: https – određuje protokol koji se koristi za komunikaciju (HTTPS).
+- Accept – navodi tipove sadržaja (MIME tipove) koje klijent može prihvatiti i obraditi (npr. text/html za dokument ili image/avif, image/webp, image/png za slike).
+- User-Agent – sadrži informacije o web pretraživaču, njegovoj verziji i operativnom sistemu klijenta.
+- Accept-Language – definira preferirani jezik sadržaja koji klijent očekuje od servera.
+- Accept-Encoding – označava metode kompresije podataka koje klijent podržava (npr. gzip, deflate, br).
+
+Zaglavlja odgovora (Response Headers) i njihovo značenje:
+- Status Code: 200 OK – statusni kod koji potvrđuje da je server uspješno obradio zahtjev i vratio traženi resurs.
+- Content-Type: text/html (odnosno image/png kod zahtjeva za sliku) – označava stvarni tip medija u tijelu odgovora kako bi pretraživač znao kako da ga prikaže.
+- Content-Length: 308776 – definira tačnu veličinu tijela odgovora u bajtovima.
+- Server: nginx/1.20.1 – navodi softver i verziju web servera koji je obradio zahtjev.
+- Date: Mon, 16 Nov 2026 20:25:04 GMT – tačan datum i vrijeme kada je server generirao odgovor.
+- Last-Modified: Fri, 13 Nov 2026 13:52:21 GMT – datum i vrijeme posljednje izmjene traženog resursa na serveru.
+- Cache-Control: no-store, no-cache, must-revalidate – daje instrukcije pretraživaču o načinu keširanja primljenog sadržaja.
+- Etag: "6af71615-4b628" – jedinstveni identifikator verzije resursa koji se koristi za provjeru izmjena pri ponovnom učitavanju.
+- Accept-Ranges: bytes – označava da server podržava djelomično preuzimanje resursa u bajtovima.
+
+Pitanje 4: Zaglavlje u kojem piše koji web pretraživač koristite
+Informacija o web pretraživaču, njegovoj verziji i operativnom sistemu klijenta nalazi se u zaglavlju zahtjeva (Request Headers) pod nazivom User-Agent.
+
+Pitanje 5: Koliko je ukupno zahtjeva upućeno?
+Za potpuno učitavanje web stranice upućeno je ukupno 61 zahtjev (60 zahtjeva je uspješno izvršeno sa statusnim kodovima 200 OK i 206 Partial Content, dok je 1 zahtjev za eksterni font blokiran od strane pretraživača). Ukupna količina prenesenih podataka iznosi 3.7 MB.

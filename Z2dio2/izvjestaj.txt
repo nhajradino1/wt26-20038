@@ -1,0 +1,43 @@
+Laboratorijska vježba br. 5: HTTP protokol i Postman alat
+Izvještaj – Zadatak 2
+
+Za testiranje rada REST web servisa korišten je alat Postman i javni API servisa The Movie Database (TMDB). Nakon registracije na TMDB platformi i generisanja ličnog API ključa, iz dokumentacije za pretragu filmova (Search Movie) prepoznati su sljedeći elementi potrebni za upućivanje HTTP GET zahtjeva:
+- URL (endpoint): https://api.themoviedb.org/3/search/movie
+- Obavezni Query parametri:
+  - api_key: jedinstveni ključ za autentifikaciju korisnika web servisa
+  - query: pojam za pretragu naziva filma (u ovom primjeru: Inception)
+
+Kompletan URL upućenog GET zahtjeva glasi:
+https://api.themoviedb.org/3/search/movie?api_key=dff9bc2a07d7e0474590fc1b6362c30f&query=Inception
+
+Nakon slanja zahtjeva putem Postman alata, server je vratio JSON odgovor sa ukupno 12 pronađenih rezultata ("total_results": 12), pri čemu je prvi rezultat film "Inception" (id: 27205, godina izdanja: 2010-07-15, prosječna ocjena: 8.373).
+
+Analiza odgovora od servera:
+
+1. Zaglavlja odgovora (Response Headers) i njihovo značenje:
+- Content-Type: application/json;charset=utf-8 – definira tip medija i kodiranje znakova u tijelu odgovora (JSON format kodiran u UTF-8).
+- Transfer-Encoding: chunked – označava da se tijelo odgovora šalje u dijelovima (blokovima), bez unaprijed definisane ukupne veličine putem Content-Length zaglavlja.
+- Connection: keep-alive – održava aktivnu mrežnu konekciju otvorenom za eventualne naknadne zahtjeve između klijenta i servera.
+- Date: Mon, 16 Nov 2026 20:45:31 GMT – tačan datum i vrijeme kada je server generirao i poslao odgovor.
+- X-Az: us-east-1c – interno zaglavlje koje označava AWS zonu dostupnosti (Availability Zone) u kojoj je zahtjev obrađen.
+- Etag: W/"82f56294b9e0c77bf29ae6777ca2b4662d3aa2ff573772f0eb459f0adaef0ef0" – jedinstveni identifikator verzije resursa koji služi za provjeru izmjena pri keširanju.
+- Server: openresty – navodi naziv web servera (OpenResty, baziran na Nginxu) koji je obradio zahtjev.
+- X-Gateway-Cache-Status: HIT – pokazuje da je odgovor uspješno pronađen i poslužen iz API gateway keša.
+- X-Task-Id: 1edcf882cf844d9fb95f248a4f8de788 – jedinstveni identifikator zadatka/zahtjeva za potrebe praćenja i dijagnostike na strani servera.
+- Content-Encoding: gzip – označava da je tijelo odgovora komprimirano pomoću gzip algoritma radi bržeg prenosa podataka.
+- Cache-Control: public, max-age=4911 – definira pravila keširanja; odgovor je javno keširan i smatra se svježim 4911 sekundi.
+- X-Cache: Miss from cloudfront – označava da traženi odgovor nije bio u lokalnom CloudFront CDN kešu na rubnom čvoru, pa je proslijeđen dalje prema izvornom serveru.
+- Via: 1.1 9d4b926b2502a3881ced93ebb5a88e28.cloudfront.net (CloudFront) – prikazuje posrednike (proxy servere i CDN čvorove) kroz koje je odgovor prošao na putu do klijenta.
+- X-Amz-Cf-Pop: IAD61-P9 – označava tačku prisutnosti (Point of Presence) Amazon CloudFront mreže preko koje je odgovor isporučen.
+- Alt-Svc: h3=":443"; ma=86400 – obavještava klijenta da server podržava alternativni protokol HTTP/3 na portu 443 u trajanju od 86400 sekundi.
+- X-Amz-Cf-Id: 7Gc8D9WWIBNt35KmMdt3LRTU6TAKe4XSKYnwfIHQITJv6tZRBT2-MQ== – jedinstveni identifikator transakcije unutar Amazon CloudFront sistema.
+- Vary: Origin – govori keš serverima da različiti izvori zahtjeva (Origin zaglavlja) mogu rezultirati različitim odgovorima.
+
+2. Statusni kod:
+200 OK – označava da je HTTP zahtjev uspješno primljen, shvaćen i obrađen od strane servera, te da odgovor sadrži tražene podatke.
+
+3. Vrijeme odziva:
+Vrijeme potrebno da odgovor stigne od servera iznosilo je 29 ms (odnosno vrijeme odslikano u Postman traci pored statusnog koda prilikom izvršenja zahtjeva).
+
+4. Tip sadržaja odgovora:
+Tip sadržaja je application/json;charset=utf-8 (JSON format kodiran u UTF-8).
